@@ -22,7 +22,7 @@ class MyAppSecond extends StatelessWidget {
               new Text(
                 "Tipo de insumo:"
               ),
-              DropDownField(
+              new DropDownField(
                 onValueChanged: (dynamic value){
                   tipo_insumo_id = value;
                 },
@@ -30,6 +30,16 @@ class MyAppSecond extends StatelessWidget {
                 hintText: 'Selecciona el tipo de insumo',
                 labelText: '-- Tipo de insumo --',
                 items: tipoDeInsumo
+              ),
+              new Text("Procedencia: "),
+              new DropDownField(
+                onValueChanged: (dynamic value){
+                  dependencia_insumo_id = value;
+                },
+                value: dependencia_insumo_id,
+                hintText: "Selecciona la procedencia",
+                labelText: "-- Dependencia --",
+                items: procedenciaInsumo
               ),
             ]
           )
