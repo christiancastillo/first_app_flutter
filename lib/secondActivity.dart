@@ -84,8 +84,8 @@ class MyAppSecond extends StatelessWidget {
       ),
       bottomNavigationBar:
           new BottomNavigationBar(items: const <BottomNavigationBarItem>[
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.photo), label: 'Second'),
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Inicio'),
+        BottomNavigationBarItem(icon: Icon(Icons.photo), label: 'Reporte'),
       ]),
       /*child: new SizedBox(
             width: 300.0,
