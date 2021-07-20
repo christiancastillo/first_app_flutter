@@ -2,57 +2,52 @@ import 'package:dropdownfield/dropdownfield.dart';
 import 'package:flutter/material.dart';
 
 class MyAppSecond extends StatelessWidget {
-
   final String titulo = '';
   String tipo_insumo_id = "";
   String dependencia_insumo_id = "";
   List<String> tipoDeInsumo = [
-    "Material Medico Gastable", 
-    "Medicamento", 
-    "Papeleria", 
-    "Material didactico", 
+    "Material Medico Gastable",
+    "Medicamento",
+    "Papeleria",
+    "Material didactico",
     "Otros"
-    ];
-  List<String> procedenciaInsumo = ["Planeacion", 
-  "Almacen Estatal SSH", 
-  "Direccion de Primer Nivel de Atención", 
-  "Jurídico", 
-  "Patrimonio social", 
-  "Segundo Nivel de Atencion",
-  "Hospital Niño DIF",
-  "Almacen Subsecretaria de Finanzas"];
+  ];
+  List<String> procedenciaInsumo = [
+    "Planeacion",
+    "Almacen Estatal SSH",
+    "Direccion de Primer Nivel de Atención",
+    "Jurídico",
+    "Patrimonio social",
+    "Segundo Nivel de Atencion",
+    "Hospital Niño DIF",
+    "Almacen Subsecretaria de Finanzas"
+  ];
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Reporte Insumos de Valija SSH")
-      ),
+      appBar: AppBar(title: Text("Reporte Insumos de Valija SSH")),
       body: new Center(
         child: new SingleChildScrollView(
           child: new Column(
             children: <Widget>[
-              new Text(
-                "Tipo de insumo:"
-              ),
+              new Text("Tipo de insumo:"),
               new DropDownField(
-                onValueChanged: (dynamic value){
-                  tipo_insumo_id = value;
-                },
-                value: tipo_insumo_id,
-                hintText: 'Selecciona el tipo de insumo',
-                labelText: '-- Tipo de insumo --',
-                items: tipoDeInsumo
-              ),
+                  onValueChanged: (dynamic value) {
+                    tipo_insumo_id = value;
+                  },
+                  value: tipo_insumo_id,
+                  hintText: 'Selecciona el tipo de insumo',
+                  labelText: '-- Tipo de insumo --',
+                  items: tipoDeInsumo),
               new Text("Procedencia: "),
               new DropDownField(
-                onValueChanged: (dynamic value){
-                  dependencia_insumo_id = value;
-                },
-                value: dependencia_insumo_id,
-                hintText: "Selecciona la procedencia",
-                labelText: "-- Dependencia --",
-                items: procedenciaInsumo
-              ),
+                  onValueChanged: (dynamic value) {
+                    dependencia_insumo_id = value;
+                  },
+                  value: dependencia_insumo_id,
+                  hintText: "Selecciona la procedencia",
+                  labelText: "-- Dependencia --",
+                  items: procedenciaInsumo),
               new Text("Descripcion del insumo: "),
               new TextField(
                 //obscureText: true,
@@ -68,37 +63,34 @@ class MyAppSecond extends StatelessWidget {
                 maxLength: 4,
                 expands: false,
                 decoration: new InputDecoration(
-                  labelText: "Cantidad recibida".toUpperCase()
-                ),
+                    labelText: "Cantidad recibida".toUpperCase()),
               ),
-              new Row(
-                children: <Widget>[
-                  new Container(
-                    width: 100.0,
-                    height: 50.0,
-                  ),
-                  new ElevatedButton(
-                    onPressed: null,
-                    child: new Text("Guardar".toUpperCase())
-                  ),
-                  new SizedBox(
-                    width: 100.0,
-                    height: 50.0,
-                    ),
-                    new ElevatedButton(
-                      onPressed: null,
-                      child: Text("BOO")
-                  )
-                ]
-              )
+              new Row(children: <Widget>[
+                new Container(
+                  width: 100.0,
+                  height: 50.0,
+                ),
+                new ElevatedButton(
+                    onPressed: null, child: new Text("Guardar".toUpperCase())),
+                new SizedBox(
+                  width: 100.0,
+                  height: 50.0,
+                ),
+                new ElevatedButton(onPressed: null, child: Text("BOO"))
+              ])
             ],
           ),
         ),
       ),
-          /*child: new SizedBox(
+      bottomNavigationBar:
+          new BottomNavigationBar(items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        BottomNavigationBarItem(icon: Icon(Icons.photo), label: 'Second'),
+      ]),
+      /*child: new SizedBox(
             width: 300.0,
             height:30.0,
           )*/
-    );   
+    );
   }
 }
