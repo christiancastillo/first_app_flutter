@@ -68,14 +68,37 @@ class MyAppSecond extends StatelessWidget {
                 maxLength: 4,
                 expands: false,
                 decoration: new InputDecoration(
-                  labelText: "Cantidad recibida"
-                )
+                  labelText: "Cantidad recibida".toUpperCase()
+                ),
+              ),
+              new Row(
+                children: <Widget>[
+                  new Container(
+                    width: 100.0,
+                    height: 50.0,
+                  ),
+                  new ElevatedButton(
+                    onPressed: null,
+                    child: new Text("Guardar".toUpperCase())
+                  ),
+                  new SizedBox(
+                    width: 100.0,
+                    height: 50.0,
+                    ),
+                    new ElevatedButton(
+                      onPressed: null,
+                      child: Text("BOO")
+                  )
+                ]
               )
-            ]
-          )
-        )
-      )
-    
+            ],
+          ),
+        ),
+      ),
+          /*child: new SizedBox(
+            width: 300.0,
+            height:30.0,
+          )*/
     );   
   }
 }
