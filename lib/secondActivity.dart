@@ -76,7 +76,8 @@ class MyAppSecond extends StatelessWidget {
                   width: 100.0,
                   height: 50.0,
                 ),
-                new ElevatedButton(onPressed: null, child: Text("BOO"))
+                new ElevatedButton(onPressed: null, child: Text("BOO")
+                )
               ])
             ],
           ),

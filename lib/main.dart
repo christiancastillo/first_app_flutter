@@ -49,6 +49,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   String _value = "";
+  int contador = 0;
 
   void _onClick(){
     setState(() {
@@ -74,6 +75,18 @@ class _MyHomePageState extends State<MyHomePage> {
       MaterialPageRoute(
         builder: (context) => MyAppSecond())
     );
+  }
+
+  void _suma(){
+    setState((){
+      contador++;
+    });
+  }
+
+    void _resta(){
+    setState((){
+      contador--;
+    });
   }
 
   @override
@@ -110,6 +123,31 @@ class _MyHomePageState extends State<MyHomePage> {
           // horizontal).
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
+            new Container(
+              padding: new EdgeInsets.all(32.0),
+              child: new Center(
+                child: new Column(
+                  children: <Widget>[
+                    new TextField(
+                      decoration: new InputDecoration(
+                        labelText: "Hello",
+                        hintText: "HINT",
+                        icon: Icon(Icons.people)
+                      ),                        
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            new Text(contador.toString()),
+            new IconButton(
+            icon: Icon(Icons.add),
+            onPressed: () => _suma()
+            ),
+            new IconButton(
+              icon: Icon(Icons.remove),
+              onPressed: () => _resta()
+            ),
             new Text(
               _value,
             ),
