@@ -2,7 +2,7 @@ import 'package:dropdownfield/dropdownfield.dart';
 import 'package:flutter/material.dart';
 
 class MyAppSecond extends StatelessWidget {
-  final String titulo = '';
+  String titulo = '';
   String tipo_insumo_id = "";
   String dependencia_insumo_id = "";
   List<String> tipoDeInsumo = [
@@ -24,8 +24,9 @@ class MyAppSecond extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
+    titulo = "Reporte de Insumos de Valija SSH";
     return Scaffold(
-      appBar: AppBar(title: Text("Reporte Insumos de Valija SSH")),
+      appBar: AppBar(title: Text(titulo)),
       body: new Center(
         child: new SingleChildScrollView(
           child: new Column(
@@ -86,7 +87,7 @@ class MyAppSecond extends StatelessWidget {
       bottomNavigationBar:
           new BottomNavigationBar(items: const <BottomNavigationBarItem>[
         BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Inicio'),
-        BottomNavigationBarItem(icon: Icon(Icons.photo), label: 'Reporte'),
+        BottomNavigationBarItem(icon: Icon(Icons.account_circle), label: 'Reporte'),
       ]),
       /*child: new SizedBox(
             width: 300.0,
